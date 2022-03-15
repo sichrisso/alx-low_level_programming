@@ -1,46 +1,44 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
-* print_times_table - Print the `n` times table, starting with 0.
-* Description: If `n` is greater than 15 or less than 0, print nothing.
-* @n: int type number
-*/
+ * print_times_table - Prints the times table of the input,
+ *                     starting with 0.
+ * @n: The value of the times table to be printed.
+ */
 void print_times_table(int n)
 {
-int x = 0, y, z;
-if (n > 15 || n < 0)
-return;
-while (x <= n)
-{
-for (y = 0; y <= n; y++)
-{
-z = x * y;
-if (z > 99)
-{
-_putchar(z / 100 + '0');
-_putchar((z / 10 % 10) + '0');
-_putchar(z % 10 + '0');
-}
-else if (z > 9)
-{
-_putchar(' ');
-_putchar(z / 10 + '0');
-_putchar(z % 10 + '0');
-}
-else if (y != 0)
-{
-_putchar(' ');
-_putchar(' ');
-_putchar(z + '0');
-}
-else
-_putchar(z + '0');
-if (y != n)
-{
-_putchar(',');
-_putchar(' ');
-}
-}
-_putchar('\n');
-x++;
-}
+	int x, y, z;
+
+	if (n >= 0 && n <= 15)
+	{
+		for (x = 0; x <= n; x++)
+		{
+			_putchar('0');
+
+			for (y = 1; y <= n; y++)
+			{
+				_putchar(',');
+				_putchar(' ');
+
+				prod = x * y
+
+				if (z <= 99)
+					_putchar(' ');
+				if (z <= 9)
+					_putchar(' ');
+
+				if (z >= 100)
+				{
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10)) % 10 + '0');
+				}
+				else if (z <= 99 && z >= 10)
+				{
+					_putchar((z / 10) + '0');
+				}
+				_putchar((z % 10) + '0');
+			}
+			_putchar('\n');
+		}
+	}
 }

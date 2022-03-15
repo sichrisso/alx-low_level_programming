@@ -1,13 +1,14 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * _isalpha - tests whether a character is from the English alphabet.
- * @c: character to be checked.
+ * _isalpha - checks whether a character is from the English alphabet.
+ * @n: character to be checked.
+ *
  * Return: 1 if the character is an English character.
  * 0 if the character is not an English character.
  */
-int _isalpha(int c)
+int _isalpha(int n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if ((n >= 'a' && n <= 'z') || (n >= 'A' && n <= 'Z'))
 		return (1);
 	else
 		return (0);
