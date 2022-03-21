@@ -1,26 +1,42 @@
-#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 /**
- * main - Program that generates random valid passwords
- * @void: Empty input
+ * main - random password generator for 101-crackme
  *
- * Description: Program that generates random valid passwords
- * Return: 0 if works
+ * Return: always 0
  */
 int main(void)
 {
-	int i = 0, random, checksum;
+	int i, j, k, s;
+	char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char p[58];
 
 	srand(time(NULL));
-	checksum = 2772;
-	while (checksum > 122)
+	while (s != 2772)
 	{
-		random = (rand() % 100);
-		printf("%c", random);
-		checksum -= random;
-		i++;
+		i = k = s = 0;
+		while ((2772 - 122) > s)
+		{
+			j = rand() % 62;
+			p[i] = c[j];
+			s += c[j];
+			i++;
+		}
+		while (c[k])
+		{
+			if (c[k] == (2772 - s))
+			{
+				p[i] = c[k];
+				s += c[k];
+				i++;
+				break;
+			}
+			k++;
+		}
 	}
-	printf("%c", checksum);
+	p[i] = '\0';
+	printf("%s", p);
 	return (0);
 }
