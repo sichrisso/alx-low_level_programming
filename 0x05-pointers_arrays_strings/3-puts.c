@@ -1,15 +1,17 @@
 #include "main.h"
 
 /**
- * _puts(char *str) - a function that prints a string, followed by a new line, to stdout
+ * _puts - a function that prints a string, followed by a new line, to stdout
  *
- * Return: Always 0.
+ * @str: Pointer with the address value.
+ *
+ * Return: none.
  */
-int main(void)
+void _puts(char *str)
 {
-    char *str;
-
-    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-    _puts(str);
-    return (0);
+	while (*str != '\0')
+	{
+		_putchar(*str++);
+	}
+	_putchar('\n');
 }
