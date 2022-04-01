@@ -1,41 +1,32 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-
 /**
- * main - Principal funtion
- *
- * @argc: Variable
- * @argv: Array
- *
- * Return: Always 0
+ * main - function that sum all the arguments that are numbers
+ * @argc: count of the arguments
+ * @argv: pointers array
+ * Return: int
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i, j, tot;
+	int add = 0;
+	int i;
+	int j;
 
-	if (argc > 1)
+	for (i = 1; i < argc; i++)
 	{
-		for (i = 1; i < argc; i++)
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			for (j = 0; argv[i][j]; j++)
+			if (!isdigit(argv[i][j]))
 			{
-				if (!isdigit(argv[i][j]))
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (1);
 			}
-			tot = tot + atoi(argv[i]);
-
 		}
+		add += atoi(argv[i]);
+	}
+	printf("%d\n", add);
 
-	}
-	else
-	{
-		printf("0\n");
-		return (0);
-	}
-	printf("%i\n", tot);
-	return (0);
+	return (add);
 }

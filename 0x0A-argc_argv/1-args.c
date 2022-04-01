@@ -1,16 +1,14 @@
+#include "main.h"
 #include <stdio.h>
-
 /**
- * main - Funtion
- *
- * @argc: Integer
- * @argv: Array
- *
- * Return: Always 0
+ * main - function that prints the number of elements
+ * @argc: count of the arguments
+ * @argv: pointers array
+ * Return: int
  */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	(argc != 0 && *argv) ? printf("%d\n", argc - 1) : putchar('\n');
+	(void)argv;
+	printf("%d\n", argc - 1);
 	return (0);
 }
