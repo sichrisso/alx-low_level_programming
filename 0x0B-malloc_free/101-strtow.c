@@ -1,84 +1,61 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * word_len - Locates the index marking the end of the
- *            first word contained within a string.
- * @str: The string to be searched.
+ * main - check the code for Holberton School students.
  *
- * Return: The index marking the end of the initial word pointed to by str.
+ * Return: Always 0.
  */
-int word_len(char *str)
-{
-	int index = 0, len = 0;
+#include <stdio.h>
+#include <stdlib.h>
 
-	while (*(str + index) && *(str + index) != ' ')
-	{
-		len++;
-		index++;
-	}
-
-	return (len);
-}
+char *str_concat(char *, char *);
 
 /**
- * count_words - Counts the number of words contained within a string.
- * @str: The string to be searched.
+ * main - check the code for Holberton School students.
  *
- * Return: The number of words contained within str.
+ * Return: Always 0.
  */
-int count_words(char *str)
-{
-	int index = 0, words = 0, len = 0;
-
-	for (index = 0; *(str + index); index++)
-		len++;
-
-	for (index = 0; index < len; index++)
-	{
-		if (*(str + index) != ' ')
-		{
-			words++;
-			index += word_len(str + index);
-		}
-	}
-
-	return (words);
-}
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * strtow - Splits a string into words.
- * @str: The string to be split.
+ * main - check the code for Holberton School students.
  *
- * Return: If str = NULL, str = "", or the function fails - NULL.
- *         Otherwise - a pointer to an array of strings (words).
+ * Return: Always 0.
  */
-char **strtow(char *str)
+#include <stdio.h>
+#include <stdlib.h>
+
+char *str_concat(char *, char *);
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
 {
-	char **strings;
-	int index = 0, words, w, letters, l;
+    char *s;
 
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
-
-	words = count_words(str);
-	if (words == 0)
-		return (NULL);
-
-	strings = malloc(sizeof(char *) * (words + 1));
-	if (strings == NULL)
-		return (NULL);
-
-	for (w = 0; w < words; w++)
-	{
-		while (str[index] == ' ')
-			index++;
-
-		letters = word_len(str + index);
-
-		strings[w] = malloc(sizeof(char) * (letters + 1));
-
-		if (strings[w] == NULL)
-		{
-			for (; w >= 0; w--)
-
+    s = str_concat("Betty ", "Holberton");
+    if (s == NULL)
+    {
+        printf("failed\n");
+        return (1);
+    }
+    printf("%s\n", s);
+    free(s);
+    return (0);
+}
