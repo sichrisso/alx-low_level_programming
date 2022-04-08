@@ -1,6 +1,11 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+int _strlen(char *s);
+char *xarray(int size);
+char *_zero_iteration(char *s);
+int convert_to_digit(char s);
+void _product(char *prod, char *mul, int digit, int zeroes);
+void nums_add(char *final_prod, char *next_prod, int next_len);
 
 /**
  *_strlen - length of string
