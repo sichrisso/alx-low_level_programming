@@ -1,42 +1,52 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * string_nconcat - Funtion
- *
- * @s1: String 1
- * @s2: String 2
- * @n: n bytes of s2
- *
- * Return: Always 0
- */
+  * string_nconcat - ...
+  * @s1: ...
+  * @s2: ...
+  * @n: ...
+  *
+  * Return: ...
+  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *pnt = NULL;
-	unsigned int size1, size2;
+	unsigned int i = 0, j = 0, k = 0, l = 0;
+	char *str;
 
-	if (!s1)
+	if (s1 == NULL)
 		s1 = "";
-	if (!s2)
+	if (s2 == NULL)
 		s2 = "";
-	for (size1 = 0; s1[size1]; size1++)
-	;
 
-	for (size2 = 0; s2[size2]; size2++)
-	;
-	if (n >= size2)
-		n = size2;
-	pnt = malloc(sizeof(char) * (n + size1 + 1));
-	if (!pnt)
-	{
+	while (s1[i])
+		i++;
+
+	while (s2[k])
+		k++;
+
+	if (n >= k)
+		l = i + k;
+	else
+		l = i + n;
+
+	str = malloc(sizeof(char) * l + 1);
+	if (str == NULL)
 		return (NULL);
+
+	k = 0;
+	while (j < l)
+	{
+		if (j <= i)
+			str[j] = s1[j];
+
+		if (j >= i)
+		{
+			str[j] = s2[k];
+			k++;
+		}
+		j++;
 	}
-	for (size1 = 0; s1[size1]; size1++)
-		pnt[size1] = s1[size1];
-
-	for (size2 = 0; size2 < n; size2++)
-		pnt[size1 + size2] = s2[size2];
-
-	pnt[size1 + n] = '\0';
-	return (pnt);
-
+	str[j] = '\0';
+	return (str);
 }

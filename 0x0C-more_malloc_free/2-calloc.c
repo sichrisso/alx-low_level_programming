@@ -1,24 +1,32 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _calloc - Funtion
- *
- * @nmemb: Elements
- * @size: Lenght
- *
- * Return: Pointer
- */
+  * _calloc - ...
+  * @nmemb: number of members
+  * @size: size
+  *
+  * Return: ...
+  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i;
-	char *ptn;
+	int i = 0, l = 0;
+	char *p;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptn = malloc(nmemb * size);
-	if (!ptn)
+
+	l = nmemb * size;
+	p = malloc(l);
+
+	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb * size; i++)
-		ptn[i] = 0;
-	return (ptn);
+
+	while (i < l)
+	{
+		p[i] = 0;
+		i++;
+	}
+
+	return (p);
 }
